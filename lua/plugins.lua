@@ -114,8 +114,12 @@ packer.startup({
 
     --------------------- LSP --------------------
     use({
+        "williamboman/mason.nvim",
+        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+    })
+    use({
+        "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
-        "williamboman/nvim-lsp-installer",
     })
     -- 补全
     use("hrsh7th/nvim-cmp")
