@@ -11,30 +11,27 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 local opt = {
-  noremap = true,
-  silent = false,
+    noremap = true,
+    silent = false,
 }
 
 -- 本地变量
 local map = vim.api.nvim_set_keymap
 
--- $跳到行尾不带空格 (交换$ 和 g_)
-map("v", "$", "g_", opt)
-map("v", "g_", "$", opt)
-map("n", "$", "g_", opt)
-map("n", "g_", "$", opt)
+-- 跳到行头尾
+map("n", "H", "g^", opt)
+map("n", "L", "g_", opt)
 -- 单行移动
-map("n", "j", "gj", opt);
-map("n", "k", "gk", opt);
--- visual模式下缩进代码
-map("v", "<", "<gv", opt)
-map("v", ">", ">gv", opt)
+map("n", "j", "gj", opt)
+map("n", "k", "gk", opt)
 -- 在visual mode 里粘贴不要复制
 map("v", "p", '"_dP', opt)
 -- 保存
 map("n", "<A-w>", ":w<CR>", opt)
 -- 关闭buffer窗口
 map("n", "<A-c>", ":Bdelete %<CR>", opt)
+-- 取消高亮
+map("n", "<ESC><ESC>", ":nohlsearch<CR>", opt)
 
 ------------------------------------------------------------------
 -- windows 分屏快捷键
@@ -55,6 +52,15 @@ map("n", "<A-l>", "<C-w>l", opt)
 -- Terminal相关
 map("n", "st", ":sp | terminal<CR>", opt)
 map("n", "stv", ":vsp | terminal<CR>", opt)
+-- 调整窗口大小
+map("n", "<A-+>", ":vertical resize+10<CR>", opt)
+map("n", "<A-->", ":vertical resize-10<CR>", opt)
+
+-- 诊断错误提示
+vim.keymap.set("n", "<space>ef", vim.diagnostic.open_float, opts)
+--vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+--vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+vim.keymap.set("n", "<space>el", vim.diagnostic.setloclist, opts)
 
 ------------------------------------------------------------------
 -- plugins 快捷键
@@ -67,8 +73,8 @@ map("n", "<F3>", ":AerialToggle right<CR>", opt)
 
 -- nvim-tree --
 map("n", "<F2>", ":NvimTreeToggle<CR>", opt)
-map("n", "<A-+>", ":NvimTreeResize +20<CR>", opt)
-map("n", "<A-->", ":NvimTreeResize -20<CR>", opt)
+--map("n", "<A-+>", ":NvimTreeResize +20<CR>", opt)
+--map("n", "<A-->", ":NvimTreeResize -20<CR>", opt)
 
 -- bufferline --
 map("n", "<A-,>", ":BufferLineCyclePrev<CR>", opt)
