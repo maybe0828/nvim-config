@@ -13,7 +13,6 @@ nvim_tree.setup({
         width = 30,
         cursorline = true,
         side = "left",
-        hide_root_folder = false,
         number = false,
         relativenumber = false,
     },
