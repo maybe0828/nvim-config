@@ -50,8 +50,9 @@ map("n", "<A-j>", "<C-w>j", opt)
 map("n", "<A-k>", "<C-w>k", opt)
 map("n", "<A-l>", "<C-w>l", opt)
 -- Terminal相关
-map("n", "st", ":sp | terminal<CR>", opt)
-map("n", "stv", ":vsp | terminal<CR>", opt)
+map("n", "th", ":ToggleTerm direction=horizontal<CR>", opt)
+map("n", "tv", ":ToggleTerm direction=vertical<CR>", opt)
+map("n", "tf", ":ToggleTerm direction=float<CR>", opt)
 -- 调整窗口大小
 map("n", "<A-+>", ":vertical resize+10<CR>", opt)
 map("n", "<A-->", ":vertical resize-10<CR>", opt)
