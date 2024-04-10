@@ -83,7 +83,8 @@ map("n", "<A-.>", ":BufferLineCycleNext<CR>", opt)
 map("n", "<A-o>", ":BufferLineCloseOthers<CR>", opt)
 
 -- gitsigns --
-map("n", "<A-?>", ":Gitsigns toggle_current_line_blame<CR>", opt)
+--map("n", "<A-?>", ":Gitsigns toggle_current_line_blame<CR>", opt)
+map("n", "<A-?>", ":Gitsigns blame_line table<CR>", opt)
 
 -- telescope --
 map("n", "<A-f>f", ":Telescope find_files<CR>", opt)
