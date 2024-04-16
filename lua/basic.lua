@@ -47,7 +47,7 @@ vim.o.whichwrap = "<,>,[,]"
 -- 允许隐藏被修改过的buffer
 vim.o.hidden = true
 -- 鼠标支持
-vim.o.mouse = "v"
+vim.o.mouse = "n"
 -- 禁止创建备份文件
 vim.o.backup = false
 vim.o.writebackup = false
