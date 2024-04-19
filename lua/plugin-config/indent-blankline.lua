@@ -1,5 +1,5 @@
 -- https://github.com/lukas-reineke/indent-blankline.nvim
-local status, indent_blankline = pcall(require, "indent_blankline")
+local status, indent_blankline = pcall(require, "ibl")
 if not status then
     vim.notify("没有找到 indent_blankline")
     return
@@ -11,9 +11,11 @@ end
 
 indent_blankline.setup({
     -- 空行占位
-    space_char_blankline = "",
+    --space_char_blankline = "",
     -- 竖线样式
-    char = '¦'
+    indent = { char = '¦' },
+    scope = { show_start = false, show_end = false },
+    -- char = '¦'
     -- char = '┆'
     -- char = '│'
     -- char = "⎸",
