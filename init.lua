@@ -17,11 +17,12 @@ require("plugin-config.gitsigns")
 require("plugin-config.indent-blankline")
 require("plugin-config.lualine")
 require("plugin-config.nvim-autopairs")
+require("plugin-config.nvim-scrollview")
 require("plugin-config.nvim-tree")
 require("plugin-config.nvim-treesitter")
 require("plugin-config.telescope")
 require("plugin-config.toggleterm")
---require("plugin-config.tokyonight")
+require("plugin-config.tokyonight")
 
 -- 内置LSP
 require("plugin-lsp.setup")
