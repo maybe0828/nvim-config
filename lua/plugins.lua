@@ -78,9 +78,10 @@ packer.startup({
     --}
 
     -- aerial
-    use {
-        'stevearc/aerial.nvim',
-    }
+    use ("stevearc/aerial.nvim")
+
+    -- nvim-scrollview
+    use ("dstein64/nvim-scrollview")
 
     -- indent-blankline
     use("lukas-reineke/indent-blankline.nvim")
