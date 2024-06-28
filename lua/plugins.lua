@@ -92,6 +92,9 @@ packer.startup({
     -- nvim-autopairs
     use("windwp/nvim-autopairs")
 
+    -- tidy.nvim
+    use("mcauley-penney/tidy.nvim")
+
     -- git
     use("lewis6991/gitsigns.nvim")
 
