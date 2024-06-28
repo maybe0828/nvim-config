@@ -21,6 +21,7 @@ require("plugin-config.nvim-scrollview")
 require("plugin-config.nvim-tree")
 require("plugin-config.nvim-treesitter")
 require("plugin-config.telescope")
+require("plugin-config.tidy")
 require("plugin-config.toggleterm")
 require("plugin-config.tokyonight")
 
