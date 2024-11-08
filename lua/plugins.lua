@@ -81,7 +81,7 @@ packer.startup({
     use ("stevearc/aerial.nvim")
 
     -- nvim-scrollview
-    use ("dstein64/nvim-scrollview")
+    --use ("dstein64/nvim-scrollview")
 
     -- indent-blankline
     use("lukas-reineke/indent-blankline.nvim")
@@ -95,6 +95,9 @@ packer.startup({
     -- tidy.nvim
     use("mcauley-penney/tidy.nvim")
 
+    -- alpha-nvim
+    --use("goolord/alpha-nvim")
+
     -- git
     use("lewis6991/gitsigns.nvim")
 
@@ -106,6 +109,9 @@ packer.startup({
 
     -- Comment
     --use("numToStr/Comment.nvim")
+
+    -- heirline
+    --use("rebelot/heirline.nvim")
 
     -- vimspector
     --use("puremourning/vimspector")
