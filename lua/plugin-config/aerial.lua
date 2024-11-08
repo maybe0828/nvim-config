@@ -6,6 +6,8 @@ if not status then
 end
 
 aerial.setup({
+    open_automatic = false,
+    show_guides = true,
     layout = {
         -- These control the width of the aerial window.
         -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
@@ -19,13 +21,31 @@ aerial.setup({
     -- This can be a filetype map (see :help aerial-filetype-map)
     -- To see all available values, see :help SymbolKind
     filter_kind = {
+        "Array",
+        "Boolean",
         "Class",
+        "Constant",
         "Constructor",
         "Enum",
+        "EnumMember",
+        "Event",
+        "Field",
+        "File",
         "Function",
         "Interface",
+        "Key",
         "Method",
         "Module",
+        "Namespace",
+        "Null",
+        "Number",
+        "Object",
+        "Operator",
+        "Package",
+        "Property",
+        "String",
         "Struct",
+        "TypeParameter",
+        "Variable",
     },
 })
