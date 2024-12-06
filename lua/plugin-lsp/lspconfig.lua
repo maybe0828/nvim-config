@@ -47,6 +47,7 @@ local lsp_flags = {
 mason_lspconfig.setup({
     ensure_installed = {
         "clangd",
+        "jdtls",
     },
     automatic_installation = true,
 })
