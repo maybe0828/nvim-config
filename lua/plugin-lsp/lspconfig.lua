@@ -81,4 +81,12 @@ mason_lspconfig.setup_handlers({
             flags = lsp_flags,
         })
     end,
+
+    ["jdtls"] = function ()
+        lspconfig.jdtls.setup({
+            cmd = {
+                'jdtls', '--java-executable=/usr/bin/java'
+            },
+        })
+    end,
 })
