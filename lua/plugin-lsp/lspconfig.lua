@@ -87,6 +87,27 @@ mason_lspconfig.setup_handlers({
             cmd = {
                 'jdtls', '--java-executable=/usr/bin/java'
             },
+            init_options = {
+                settings = {
+                    java = {
+                        implementationsCodeLens = { enabled = true },
+                        imports = {
+                            gradle = {
+                                enabled = true,
+                                wrapper = {
+                                    enabled = true,
+                                    checksums = {
+                                        {
+                                            sha256 = 'e2b82129ab64751fd40437007bd2f7f2afb3c6e41a9198e628650b22d5824a14',
+                                            allowed = true
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         })
     end,
 })
