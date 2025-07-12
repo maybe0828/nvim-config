@@ -44,6 +44,19 @@ local lsp_flags = {
     debounce_text_changes = 150,
 }
 
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = false,
+    severity_sort = true,
+    update_in_insert = false,
+    underline = false,
+    float = {
+        border = "rounded",
+        source = "always",
+        header = "",
+        prefix = "",
+    },
+
 mason_lspconfig.setup({
     ensure_installed = {
         "clangd",
@@ -62,19 +75,15 @@ mason_lspconfig.setup_handlers({
         lspconfig.clangd.setup({
             settings = {
                 clangd = {
-                    vim.diagnostic.config({
-                        virtual_text = false,
-                        signs = false,
-                        severity_sort = true,
-                        update_in_insert = false,
-                        underline = false,
-                        float = {
-                            border = "rounded",
-                            source = "always",
-                            header = "",
-                            prefix = "",
-                        },
-                    }),
+                    diagnostics = false,
+                    headerInsertion = "iwyu",
+                    inlayHints = {
+                        enabled = true, -- 总开关
+                        showParameterNames = true, -- 显示参数名提示
+                        showDesignators = true, -- 在初始化器中显示字段名
+                        showDeducedType = true, -- 显示推导的类型
+                        showTypeHints = true, -- 显示类型提示（非参数位置）
+                    },
                 },
             },
             on_attach = on_attach,
@@ -99,7 +108,7 @@ mason_lspconfig.setup_handlers({
                                     checksums = {
                                         {
                                             sha256 = 'e2b82129ab64751fd40437007bd2f7f2afb3c6e41a9198e628650b22d5824a14',
-                                            allowed = true
+                                            allowed = true,
                                         },
                                     },
                                 },
