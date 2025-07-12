@@ -56,6 +56,7 @@ vim.diagnostic.config({
         header = "",
         prefix = "",
     },
+})
 
 mason_lspconfig.setup({
     ensure_installed = {
@@ -63,9 +64,7 @@ mason_lspconfig.setup({
         "jdtls",
     },
     automatic_installation = true,
-})
 
-mason_lspconfig.setup_handlers({
     function (server_name)
         lspconfig[server_name].setup{}
     end,
