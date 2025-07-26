@@ -62,18 +62,29 @@ mason_lspconfig.setup({
     ensure_installed = {
         "clangd",
         "jdtls",
+        "kotlin_language_server",
+        "pyright",
+        "jsonls",
+        "bashls",
+        "lemminx",
     },
     automatic_installation = true,
 
     function (server_name)
-        lspconfig[server_name].setup{}
+        lspconfig[server_name].setup({
+            on_attach = on_attach,
+            flags = lsp_flags,
+        })
     end,
 
     -- language config --
     ["clangd"] = function ()
         lspconfig.clangd.setup({
-            settings = {
-                clangd = {
+            cmd = {
+                'clangd', '--log=error'
+            },
+            --settings = {
+                --clangd = {
                     diagnostics = false,
                     headerInsertion = "iwyu",
                     inlayHints = {
@@ -83,8 +94,8 @@ mason_lspconfig.setup({
                         showDeducedType = true, -- 显示推导的类型
                         showTypeHints = true, -- 显示类型提示（非参数位置）
                     },
-                },
-            },
+                --},
+            --},
             on_attach = on_attach,
             flags = lsp_flags,
         })
@@ -96,8 +107,8 @@ mason_lspconfig.setup({
                 'jdtls', '--java-executable=/usr/bin/java'
             },
             init_options = {
-                settings = {
-                    java = {
+                --settings = {
+                    --java = {
                         implementationsCodeLens = { enabled = true },
                         imports = {
                             gradle = {
@@ -113,9 +124,79 @@ mason_lspconfig.setup({
                                 },
                             },
                         },
-                    },
-                },
+                    --},
+                --},
             },
+            on_attach = on_attach,
+            flags = lsp_flags,
+        })
+    end,
+
+    ["kotlin_language_server"] = function ()
+        lspconfig.kotlin_language_server.setup({
+            --settings = {
+                --kotlin = {
+                    debugger = { enabled = false },
+                --},
+            --},
+            filetypes = { "kotlin" },
+            on_attach = on_attach,
+            flags = lsp_flags,
+        })
+    end,
+
+    ["pyright"] = function ()
+        lspconfig.pyright.setup({
+            --settings = {
+                --pyright = {
+                    disableOrganizeImports = false,
+                    analysis = {
+                        useLibraryCodeForTypes = true,
+                        diagnosticMode = "workspace",
+                        typeCheckingMode = "basic",  -- off, basic, strict
+                        autoSearchPaths = true,
+                    },
+                --},
+            --},
+            on_attach = on_attach,
+            flags = lsp_flags,
+        })
+    end,
+
+    ["jsonls"] = function ()
+        lspconfig.jsonls.setup({
+            --settings = {
+                --json = {
+                    validate = { enable = true },
+                    format = { enable = true },
+                --},
+            --},
+            on_attach = on_attach,
+            flags = lsp_flags,
+        })
+    end,
+
+    ["bashls"] = function ()
+        lspconfig.bashls.setup({
+            --settings = {
+                --bashIde = {
+                    highlightParsingErrors = true,
+                --},
+            --},
+            filetypes = { "sh", "zsh", "bash" },
+            on_attach = on_attach,
+            flags = lsp_flags,
+        })
+    end,
+
+    ["lemminx"] = function ()
+        lspconfig.lemminx.setup({
+            --settings = {
+                --lemminx = {
+                --},
+            --},
+            on_attach = on_attach,
+            flags = lsp_flags,
         })
     end,
 })
