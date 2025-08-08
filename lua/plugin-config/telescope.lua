@@ -32,7 +32,7 @@ telescope.setup({
             layout_config = {
                 width = 0.95, -- 增大窗口宽度(默认0.8)
                 height = 0.95, -- 增大窗口高度(默认0.8)
-            }.
+            },
         },
     },
 })
