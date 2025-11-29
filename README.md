@@ -1,3 +1,4 @@
+~/.config/nvim
 1. clangd --version(clangd-14)
 2. java --version(openjdk-21-jre)
 3. TSUpdate
