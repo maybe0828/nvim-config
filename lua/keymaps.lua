@@ -54,8 +54,8 @@ map("n", "th", ":ToggleTerm direction=horizontal<CR>", opt)
 map("n", "tv", ":ToggleTerm direction=vertical<CR>", opt)
 map("n", "tf", ":ToggleTerm direction=float<CR>", opt)
 -- 调整窗口大小
-map("n", "<A-+>", ":vertical resize+10<CR>", opt)
-map("n", "<A-->", ":vertical resize-10<CR>", opt)
+map("n", "<A-]>", ":vertical resize+10<CR>", opt)
+map("n", "<A-[>", ":vertical resize-10<CR>", opt)
 
 -- 诊断错误提示
 vim.keymap.set("n", "<space>ef", vim.diagnostic.open_float, opts)
