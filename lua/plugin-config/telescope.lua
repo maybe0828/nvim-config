@@ -33,6 +33,12 @@ telescope.setup({
                 width = 0.95, -- 增大窗口宽度(默认0.8)
                 height = 0.95, -- 增大窗口高度(默认0.8)
             },
+            -- 配置live_grep选择器
+            additional_args = function(opts)
+                -- 移除--smart-case参数以禁用智能大小写
+                -- 添加--case-sensitive参数以强制区分大小写
+                return { "--hidden", "--case-sensitive", "--fixed-strings", "--word-regexp" }
+            end,
         },
     },
 })
